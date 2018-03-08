@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dropdown</title>
+	<link rel="stylesheet" href="dropdown.css">
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="dropdown.js"></script>
+</head>
+<body>
+
+	
+	<div style="width: 240px;margin:20px 10px;">
+		<select class="dropdown hide no1" name="alala">
+			<option value="a">AAAA</option>
+			<option value="b">BBBB</option>
+			<option value="c">CCCC</option>
+			<option value="d">DDDD</option>
+		</select>
+	</div>
+	
+	<div style="width: 240px;margin:20px 10px;">
+		<select class="dropdown hide no2" name="alala" multiple>
+		</select>
+	</div>
+
+	<!-- <div style="width: 240px;margin:20px 10px;">
+		<div class="dropdown-warp">
+			<select class="dropdown hide" name="alala" multiple>
+				<option value="a">AAAA</option>
+				<option value="b">BBBB</option>
+				<option value="c">CCCC</option>
+				<option value="d">DDDD</option>
+			</select>
+			<a href="javascript:;" class="dropdown-clear hide">×</a>
+			<div class="dropdown-display">
+				<input type="text" placeholder="请选择" readonly/>
+			</div>
+			<div class="dropdown-main">
+				<div class="dropdown-search">
+					<input type="text" placeholder="请输入搜索" />
+				</div>
+				<div class="dropdown-list">
+					<ul>
+						<li class="dropdown-option">AAAA</li>
+						<li class="dropdown-option">BBBB</li>
+						<li class="dropdown-option">CCCC</li>
+						<li class="dropdown-option">DDDD</li>
+					</ul>
+					<p class="dropdown-nodata-tips hide">查无数据</p>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+</body>
+<script>
+
+	$(function(){
+		var data = [
+			{
+				id:"lallalal",
+				text:"哈哈哈哈哈"
+			},
+			{
+				id:"3456",
+				text:"测试萨卡卡",
+				selected:true
+			},
+			{
+				id:"7886",
+				text:"测试一下",
+				disabled:true
+			},
+			{
+				id:"6655",
+				text:"阿斯顿发顺丰"
+			}
+		];
+
+		$(".dropdown").dropdown({
+			data:data,
+			callback:function(selected){
+				console.log(selected);
+			},
+			choice:function(){
+				console.log("~~~触发了choice回调~~~")
+			}
+		});
+	});
+</script>
+</html>
